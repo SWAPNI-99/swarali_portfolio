@@ -1,7 +1,4 @@
-import { useRef } from 'react';
-import { cn } from '../../lib/cn';
-import { useInView } from '../../hooks/useInView';
-import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
+import { useEffect, useRef } from 'react';
 
 interface EditorialImageProps {
   src: string;
@@ -14,47 +11,85 @@ interface EditorialImageProps {
 export function EditorialImage({
   src,
   alt,
-  className,
+  className = '',
   eager = false,
   direction = 'none',
 }: EditorialImageProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref);
-  const reduced = usePrefersReducedMotion();
+  const frameRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const animationFrame = useRef<number | null>(null);
 
-  const visible = inView || reduced;
+  useEffect(() => {
+    const update = () => {
+      animationFrame.current = null;
 
-  const directionClass =
-    direction === 'left'
-      ? visible
-        ? 'translate-x-0'
-        : '-translate-x-10'
-      : direction === 'right'
-        ? visible
-          ? 'translate-x-0'
-          : 'translate-x-10'
-        : visible
-          ? 'translate-x-0'
-          : 'translate-y-6';
+      const frame = frameRef.current;
+      const image = imageRef.current;
+
+      if (!frame || !image) return;
+
+      const rect = frame.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      const center = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+
+      const progress = Math.max(
+        -1,
+        Math.min(1, (center - viewportCenter) / viewportHeight),
+      );
+
+      let x = 0;
+
+      if (direction === 'left') {
+        x = progress * -70;
+      }
+
+      if (direction === 'right') {
+        x = progress * 70;
+      }
+
+      image.style.transform = `translate3d(${x}px, 0, 0)`;
+    };
+
+    const onScroll = () => {
+      if (animationFrame.current !== null) return;
+
+      animationFrame.current = requestAnimationFrame(update);
+    };
+
+    update();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+
+      if (animationFrame.current !== null) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+    };
+  }, [direction]);
 
   return (
     <div
-      ref={ref}
-      className={cn(
-        'overflow-hidden',
-        !reduced &&
-          'transition-[opacity,transform] duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)]',
-        visible ? 'opacity-100' : 'opacity-0',
-        directionClass,
-        className,
-      )}
+      ref={frameRef}
+      className={`relative overflow-hidden ${className}`}
     >
       <img
+        ref={imageRef}
         src={src}
         alt={alt}
         loading={eager ? 'eager' : 'lazy'}
-        className="img-editorial h-full w-full object-cover"
-      />
+        className="block h-full w-[calc(100%+140px)] max-w-none object-cover"
+        style={{
+          marginLeft: '-70px',
+          transform: 'translate3d(0, 0, 0)',
+          willChange: 'transform',
+  }}
+/>
     </div>
   );
 }

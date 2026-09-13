@@ -46,14 +46,12 @@ function ImageBlock({
   if (!src) return null;
 
   return (
-    <div className={`overflow-hidden ${className}`}>
-      <EditorialImage
-        src={src}
-        alt={alt}
-        direction={direction}
-        className="h-full w-full"
-      />
-    </div>
+    <EditorialImage
+      src={src}
+      alt={alt}
+      direction={direction}
+      className={className}
+    />
   );
 }
 
@@ -236,10 +234,11 @@ function ArchiveStory({
         {hasImage && (
           <div className="lg:col-span-2">
             <ImageBlock
-              src={story.imageSrc}
-              alt={`${story.title} � ${story.location}`}
-              className="aspect-[4/3] w-full"
-            />
+                src={story.imageSrc}
+                alt={`${story.title} — ${story.location}`}
+                direction={index % 2 === 0 ? 'left' : 'right'}
+                className="aspect-[4/3] w-full"
+              />
           </div>
         )}
 
