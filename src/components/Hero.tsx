@@ -36,6 +36,7 @@ export function Hero() {
               src={MEDIA.hero}
               alt="Swarali JoshiRao reporting on location with a Republic microphone, standing on rocky ground near water."
               eager
+              direction="right"
               className="aspect-[4/5] w-full sm:aspect-[5/6] lg:aspect-[4/5] lg:max-h-[82vh]"
             />
             <figcaption className="mt-3 flex items-baseline justify-between gap-4 text-[11px] uppercase tracking-caps text-ink-500">

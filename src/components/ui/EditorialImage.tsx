@@ -7,28 +7,53 @@ interface EditorialImageProps {
   src: string;
   alt: string;
   className?: string;
-  imgClassName?: string;
   eager?: boolean;
+  direction?: 'left' | 'right' | 'none';
 }
 
-export function EditorialImage({ src, alt, className, imgClassName, eager }: EditorialImageProps) {
+export function EditorialImage({
+  src,
+  alt,
+  className,
+  eager = false,
+  direction = 'none',
+}: EditorialImageProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { threshold: 0.12 });
+  const inView = useInView(ref);
   const reduced = usePrefersReducedMotion();
 
+  const visible = inView || reduced;
+
+  const directionClass =
+    direction === 'left'
+      ? visible
+        ? 'translate-x-0'
+        : '-translate-x-10'
+      : direction === 'right'
+        ? visible
+          ? 'translate-x-0'
+          : 'translate-x-10'
+        : visible
+          ? 'translate-x-0'
+          : 'translate-y-6';
+
   return (
-    <div ref={ref} className={cn('overflow-hidden bg-paper-300', className)}>
+    <div
+      ref={ref}
+      className={cn(
+        'overflow-hidden',
+        !reduced &&
+          'transition-[opacity,transform] duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)]',
+        visible ? 'opacity-100' : 'opacity-0',
+        directionClass,
+        className,
+      )}
+    >
       <img
         src={src}
         alt={alt}
         loading={eager ? 'eager' : 'lazy'}
-        decoding="async"
-        className={cn(
-          'img-editorial h-full w-full object-cover object-center',
-          !reduced && 'transition-[clip-path,transform,opacity] duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)]',
-          inView || reduced ? 'opacity-100' : 'opacity-70',
-          imgClassName,
-        )}
+        className="img-editorial h-full w-full object-cover"
       />
     </div>
   );

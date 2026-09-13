@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { TopTicker } from './components/TopTicker';
 import { STORIES } from './data/stories';
 import { INTERVIEWS } from './data/interviews';
+import { EditorialImage } from './components/ui/EditorialImage';
 import {
   CAREER_JOURNEY,
   CONTACT_INFO,
@@ -35,20 +36,22 @@ function ImageBlock({
   src,
   alt,
   className = '',
+  direction = 'none',
 }: {
   src?: string;
   alt: string;
   className?: string;
+  direction?: 'left' | 'right' | 'none';
 }) {
   if (!src) return null;
 
   return (
-    <div className={`group overflow-hidden bg-paper-200 ${className}`}>
-      <img
+    <div className={`overflow-hidden ${className}`}>
+      <EditorialImage
         src={src}
         alt={alt}
-        loading="lazy"
-        className="img-editorial h-full w-full object-cover"
+        direction={direction}
+        className="h-full w-full"
       />
     </div>
   );
@@ -79,14 +82,15 @@ function FeaturedStory({
         <div className="lg:col-span-7">
           {hasImage ? (
             <ImageBlock
-              src={story.imageSrc}
-              alt={`${story.title} � ${story.location}`}
-              className={`w-full ${
+                src={story.imageSrc}
+                alt={`${story.title} — ${story.location}`}
+                direction={index % 2 === 0 ? 'left' : 'right'}
+                className={`w-full ${
                 index === 0
-                  ? 'aspect-[4/3] lg:aspect-[5/4]'
-                  : 'aspect-[4/3]'
-              }`}
-            />
+                ? 'aspect-[4/3] lg:aspect-[5/4]'
+                : 'aspect-[4/3]'
+                }`}
+/>
           ) : (
             <div className="flex min-h-[260px] items-center justify-center bg-ink-900 px-8 text-center text-paper-50">
               <div>
@@ -103,10 +107,11 @@ function FeaturedStory({
           {story.secondaryImageSrc && (
             <div className="mt-5 ml-auto w-[58%]">
               <ImageBlock
-                src={story.secondaryImageSrc}
-                alt={`${story.title} � broadcast`}
-                className="aspect-[4/3] w-full"
-              />
+                  src={story.secondaryImageSrc}
+                  alt={`${story.title} — broadcast`}
+                  direction={index % 2 === 0 ? 'right' : 'left'}
+                  className="aspect-[4/3] w-full"
+                />
             </div>
           )}
 
