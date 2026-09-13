@@ -8,30 +8,30 @@ export default {
     extend: {
       colors: {
         paper: {
-          50: '#FFFEFC',
-          100: '#FAF8F4',
-          200: '#F3EFE6',
-          300: '#E7E1D4',
-          400: '#D4CDBD',
+          50: 'rgb(var(--paper-50) / <alpha-value>)',
+          100: 'rgb(var(--paper-100) / <alpha-value>)',
+          200: 'rgb(var(--paper-200) / <alpha-value>)',
+          300: 'rgb(var(--paper-300) / <alpha-value>)',
+          400: 'rgb(var(--paper-400) / <alpha-value>)',
         },
-        ink: {
-          900: '#111111',
-          800: '#1C1C1E',
-          700: '#2C2C2E',
-          600: '#48484A',
-          500: '#636366',
-          400: '#8E8E93',
-          300: '#C7C7CC',
-          200: '#E5E5EA',
-          100: '#F2F2F7',
-        },
-        journal: {
-          red: '#B42318',
-          darkRed: '#8A1C14',
-          sand: '#E9E4D9',
-          accent: '#A82D2D',
-        }
-      },
+          ink: {
+            900: 'rgb(var(--ink-900) / <alpha-value>)',
+            800: 'rgb(var(--ink-800) / <alpha-value>)',
+            700: 'rgb(var(--ink-700) / <alpha-value>)',
+            600: 'rgb(var(--ink-600) / <alpha-value>)',
+            500: 'rgb(var(--ink-500) / <alpha-value>)',
+            400: 'rgb(var(--ink-400) / <alpha-value>)',
+            300: 'rgb(var(--ink-300) / <alpha-value>)',
+            200: 'rgb(var(--ink-200) / <alpha-value>)',
+            100: 'rgb(var(--ink-100) / <alpha-value>)',
+          },
+  journal: {
+    red: 'rgb(var(--journal-red) / <alpha-value>)',
+    darkRed: 'rgb(var(--journal-dark-red) / <alpha-value>)',
+    sand: 'rgb(var(--journal-sand) / <alpha-value>)',
+    accent: 'rgb(var(--journal-accent) / <alpha-value>)',
+  },
+},
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
         serif: ['"Instrument Serif"', '"Newsreader"', 'Georgia', 'serif'],

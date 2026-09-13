@@ -4,29 +4,77 @@
 
 @layer base {
   :root {
-    --paper-bg: #FAF8F4;
-    --ink-primary: #111111;
-    --ink-secondary: #5A5A5E;
-    --accent: #B42318;
-  }
+  --paper-50: 255 254 252;
+  --paper-100: 250 248 244;
+  --paper-200: 243 239 230;
+  --paper-300: 231 225 212;
+  --paper-400: 212 205 189;
+
+  --ink-900: 17 17 17;
+  --ink-800: 28 28 30;
+  --ink-700: 44 44 46;
+  --ink-600: 72 72 74;
+  --ink-500: 99 99 102;
+  --ink-400: 142 142 147;
+  --ink-300: 199 199 204;
+  --ink-200: 229 229 234;
+  --ink-100: 242 242 247;
+
+  --journal-red: 180 35 24;
+  --journal-dark-red: 138 28 20;
+  --journal-sand: 233 228 217;
+  --journal-accent: 168 45 45;
+}
+  html.dark {
+  --paper-50: 18 18 18;
+  --paper-100: 17 17 17;
+  --paper-200: 28 28 30;
+  --paper-300: 55 55 57;
+  --paper-400: 72 72 74;
+
+  --ink-900: 245 243 238;
+  --ink-800: 232 230 225;
+  --ink-700: 214 212 207;
+  --ink-600: 190 188 183;
+  --ink-500: 165 163 158;
+  --ink-400: 140 138 134;
+  --ink-300: 105 103 99;
+  --ink-200: 75 74 71;
+  --ink-100: 48 47 45;
+
+  --journal-red: 224 90 79;
+  --journal-dark-red: 190 65 56;
+  --journal-sand: 58 55 50;
+  --journal-accent: 224 90 79;
+}
 
   html {
     scroll-behavior: smooth;
+  }
+
+  html.dark {
+    --paper-bg: #111111;
+    --ink-primary: #F5F3EE;
+    --ink-secondary: #B8B5AF;
+    --accent: #E05A4F;
   }
 
   body {
     background-color: var(--paper-bg);
     color: var(--ink-primary);
     font-feature-settings: "ss01", "cv02", "cv03", "cv11";
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
   }
 
   ::selection {
-    background: #111111;
-    color: #FAF8F4;
+    background: var(--ink-primary);
+    color: var(--paper-bg);
   }
 
   :focus-visible {
-    outline: 2px solid #111111;
+    outline: 2px solid var(--ink-primary);
     outline-offset: 3px;
   }
 
@@ -34,12 +82,18 @@
     width: 8px;
     height: 8px;
   }
+
   ::-webkit-scrollbar-track {
-    background: #FAF8F4;
+    background: var(--paper-bg);
   }
+
   ::-webkit-scrollbar-thumb {
     background: #D4CDBD;
     border-radius: 4px;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #444444;
   }
 }
 
@@ -47,14 +101,16 @@
   .text-balance {
     text-wrap: balance;
   }
+
   .editorial-heading {
     letter-spacing: -0.04em;
     line-height: 0.95;
   }
-  
+
   .reveal-mask {
     clip-path: inset(0 0 100% 0);
   }
+
   .reveal-mask.is-visible {
     clip-path: inset(0 0 0 0);
     transition: clip-path 1.15s cubic-bezier(0.76, 0, 0.24, 1);
@@ -65,12 +121,16 @@
   html {
     scroll-behavior: auto;
   }
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
   .reveal-mask,
   .reveal-mask.is-visible {
     clip-path: none;
