@@ -201,11 +201,11 @@ function ArchiveStory({
         {hasImage && (
           <div className="lg:col-span-2">
             <ImageBlock
-                src={story.imageSrc}
-                alt={`${story.title} — ${story.location}`}
-                direction={index % 2 === 0 ? 'left' : 'right'}
-                className="aspect-[4/3] w-full"
-              />
+              src={story.imageSrc}
+              alt={`${story.title} — ${story.location}`}
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              className="aspect-[4/3] w-full"
+            />
           </div>
         )}
 
@@ -231,7 +231,19 @@ function ArchiveStory({
               {story.organization}
             </span>
 
-            <WatchLink id={story.youtubeId} />
+            {story.reportUrl ? (
+              <a
+                href={story.reportUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-ink-700 transition-opacity hover:opacity-50"
+              >
+                View Report
+                <span aria-hidden="true">↗</span>
+              </a>
+            ) : (
+              <WatchLink id={story.youtubeId} />
+            )}
           </div>
         </div>
       </div>
@@ -323,6 +335,65 @@ function InterviewsSection() {
     </section>
   );
 }
+
+
+/* -------------------------------------------------------
+   Additional Work Links
+------------------------------------------------------- */
+
+
+function AdditionalWorksSection() {
+  const additionalWorks = [
+    'https://x.com/TimesNow/status/1699245464237871224',
+    'https://x.com/MirrorNow/status/1697789300056670217',
+    'https://x.com/MirrorNow/status/1694226057480589718',
+    'https://x.com/MirrorNow/status/1690195445761310720',
+    'https://x.com/MirrorNow/status/1689279685262282753',
+    'https://x.com/TimesNow/status/1686265858362884096',
+    'https://x.com/MirrorNow/status/1684385752052793345',
+    'https://x.com/MirrorNow/status/1675008945167949824',
+    'https://x.com/MirrorNow/status/1673635365624729602',
+    'https://x.com/MirrorNow/status/1664888654802632705',
+    'https://x.com/MirrorNow/status/1663103579169718274',
+    'https://x.com/MirrorNow/status/1648685315316678656',
+    'https://x.com/MirrorNow/status/1641265203600826374',
+  ];
+
+  return (
+    <section
+      id="additional-works"
+      className="border-t border-paper-300 px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+    >
+      <div className="mx-auto max-w-[92rem]">
+        <h2 className="editorial-heading font-sans text-4xl font-medium text-ink-900 sm:text-5xl">
+          Additional works
+        </h2>
+
+        <div className="mt-10 border-t border-paper-300">
+          {additionalWorks.map((url) => (
+            <a
+              key={url}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-6 border-b border-paper-300 py-5 text-[12px] text-ink-600 transition-colors hover:text-ink-900 sm:text-[13px]"
+            >
+              <span className="break-all">{url}</span>
+
+              <span
+                aria-hidden="true"
+                className="shrink-0 text-ink-400 transition-transform duration-300 group-hover:translate-x-1"
+              >
+                ↗
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 /* -------------------------------------------------------
    ABOUT + CAREER
@@ -634,8 +705,15 @@ export default function App() {
           </div>
         </section>
 
+        {/* 03 / Interviews */}
         <InterviewsSection />
+
+        {/* Additional works */}
+        <AdditionalWorksSection />
+
+        {/* About */}
         <AboutSection />
+
         <ContactSection />
       </main>
 

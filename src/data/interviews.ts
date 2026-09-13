@@ -48,6 +48,7 @@ export const INTERVIEWS: Interview[] = [
     context: 'On-the-go tic-tac and press interviews during Maharashtra’s political transition.',
     organization: 'Times Network',
     youtubeId: '2kWI6WpQsCI',
+
   },
   {
     id: 'pramod-sawant',
@@ -65,27 +66,6 @@ export const INTERVIEWS: Interview[] = [
     youtubeId: 'iQYOVTmTFj0',
   },
   {
-    id: 'vd-satheesan',
-    personName: 'V. D. Satheesan',
-    designation: 'Leader of Opposition, Kerala, and UDF Chairman',
-    context: 'Counting-day interaction on the Kerala Assembly election verdict and the contest for government formation.',
-    organization: 'Republic Media Network',
-  },
-  {
-    id: 'michael-lobo',
-    personName: 'Michael Lobo',
-    designation: 'BJP MLA and former Goa minister',
-    context: 'Extended 30–45 minute on-camera recording on fire-safety non-compliance after the Arpora inferno.',
-    organization: 'Republic Media Network',
-  },
-  {
-    id: 'supriya-sule',
-    personName: 'Supriya Sule',
-    designation: 'Member of Parliament, Lok Sabha (Baramati)',
-    context: 'Political interview covering Maharashtra coalition politics and opposition policy.',
-    organization: 'Times Network',
-  },
-  {
     id: 'ajit-pawar',
     personName: 'Ajit Pawar',
     designation: 'Deputy Chief Minister of Maharashtra',
@@ -93,32 +73,5 @@ export const INTERVIEWS: Interview[] = [
     organization: 'Times Network',
     reportUrl: 'https://x.com/MirrorNow/status/1627734045215055872',
   },
-  {
-    id: 'harsh-sanghvi',
-    personName: 'Harsh Sanghvi',
-    designation: 'Minister of State for Home, Gujarat',
-    context: 'Reporting interactions on law-and-order and ATS operations in Gujarat.',
-    organization: 'Times Network & Republic Media Network',
-  },
-  {
-    id: 'aditya-thackeray',
-    personName: 'Aditya Thackeray',
-    designation: 'Shiv Sena (UBT) leader and former cabinet minister',
-    context: 'Political and environmental dialogue during Maharashtra’s political flux.',
-    organization: 'Times Network',
-  },
-  {
-    id: 'vivek-agnihotri',
-    personName: 'Vivek Agnihotri',
-    designation: 'Filmmaker and author',
-    context: 'Conversation on narrative cinema and public discourse, recorded during the MIT WPU / NLC Samachar period.',
-    organization: 'MIT WPU / NLC Samachar',
-  },
-  {
-    id: 'indresh-kumar',
-    personName: 'Indresh Kumar',
-    designation: '',
-    context: 'On-record interview.',
-    organization: '',
-  },
+  
 ];

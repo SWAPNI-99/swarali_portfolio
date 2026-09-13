@@ -13,6 +13,7 @@ export interface Story {
   secondaryImageSrc?: string;
   videoSrc?: string;
   youtubeId?: string;
+  reportUrl?: string;
   featured?: boolean;
   tier: 1 | 2 | 3;
 }

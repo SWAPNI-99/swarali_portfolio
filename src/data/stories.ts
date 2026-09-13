@@ -153,7 +153,7 @@ export const STORIES: Story[] = [
       'Covered the development of the ambitious multi-level flyover.',
       'Reported on the signal-free design aimed at enabling smoother traffic movement.',
     ],
-    youtubeId: '',
+    reportUrl: 'https://x.com/MirrorNow/status/1690195445761310720',
     featured: false,
     tier: 2,
   },
@@ -189,21 +189,6 @@ export const STORIES: Story[] = [
     ],
     youtubeId: 'UIoehoQcNog',
     tier: 2,
-  },
-  {
-    id: 'ahmedabad-airport-dgca',
-    title: 'Ahmedabad airport and DGCA accountability',
-    category: 'Civic',
-    date: '2025–2026',
-    location: 'Sardar Vallabhbhai Patel International Airport, Ahmedabad',
-    organization: 'Republic Media Network',
-    role: 'Gujarat bureau reporter',
-    summary:
-      'Live reporting from Ahmedabad airport on flight cancellations and stranded passengers, putting questions of regulator accountability to the DGCA on air.',
-    reportingDetails: [
-      'Spoke on air with stranded families, senior citizens and students.',
-    ],
-    tier: 3,
   },
   {
     id: 'iran-us-war-cargo-docking',
