@@ -91,6 +91,7 @@ export const INTERVIEWS: Interview[] = [
     designation: 'Deputy Chief Minister of Maharashtra',
     context: 'On-record press and hallway interactions during state political realignments.',
     organization: 'Times Network',
+    reportUrl: 'https://x.com/MirrorNow/status/1627734045215055872',
   },
   {
     id: 'harsh-sanghvi',

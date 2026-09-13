@@ -26,6 +26,7 @@ export interface Interview {
   date?: string;
   isExclusive?: boolean;
   youtubeId?: string;
+  reportUrl?: string;
 }
 
 export interface CareerMilestone {

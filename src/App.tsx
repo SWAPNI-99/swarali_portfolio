@@ -299,7 +299,19 @@ function InterviewsSection() {
                   </div>
 
                   <div className="sm:pt-1">
-                    <WatchLink id={interview.youtubeId} />
+                    {interview.reportUrl ? (
+                      <a
+                        href={interview.reportUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-ink-700 transition-opacity hover:opacity-50"
+                      >
+                        View Report
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : interview.youtubeId ? (
+                      <WatchLink id={interview.youtubeId} />
+                    ) : null}
                   </div>
                 </article>
               ))}
