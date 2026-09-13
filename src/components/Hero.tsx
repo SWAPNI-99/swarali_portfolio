@@ -10,7 +10,7 @@ export function Hero() {
           <SectionLabel>Field journalist · Gujarat bureau</SectionLabel>
           <h1 className="mt-6 font-serif text-[clamp(3.2rem,8vw,7.4rem)] leading-[0.9] tracking-tightest text-ink-900">
             Swarali
-            <span className="block italic">JoshiRao</span>
+            <span className="block italic">Joshirao</span>
           </h1>
           <p className="mt-6 text-sm font-medium uppercase tracking-caps text-ink-600 sm:text-[13px]">
             Journalist · Anchor · Media Professional
@@ -19,8 +19,7 @@ export function Hero() {
             Following the story wherever it leads.
           </p>
           <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-ink-600">
-            An on-ground reporter at Republic Media Network. Print to television to field investigations —
-            politics, national security, civic affairs and defence.
+            Principal Correspondent at Republic Media Network. A journey from print to television led to field investigations , politics, national security, civic affairs and defence.
           </p>
           <a
             href="#work"

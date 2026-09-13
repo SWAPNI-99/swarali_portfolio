@@ -62,6 +62,7 @@ export const INTERVIEWS: Interview[] = [
     designation: 'Union Minister of Civil Aviation',
     context: 'Policy conversation on aviation infrastructure, regional connectivity and youth in Parliament.',
     organization: 'NLC Samachar / MIT WPU',
+    youtubeId: 'iQYOVTmTFj0',
   },
   {
     id: 'vd-satheesan',

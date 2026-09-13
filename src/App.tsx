@@ -27,7 +27,7 @@ function WatchLink({ id }: { id?: string }) {
       rel="noreferrer"
       className="inline-flex items-center gap-2 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-900 underline decoration-paper-300 underline-offset-7 transition-colors hover:decoration-ink-900"
     >
-      Watch report <span>?</span>
+      Watch report <span>↗</span>
     </a>
   );
 }
@@ -67,67 +67,9 @@ function FeaturedStory({
   story: (typeof STORIES)[number];
   index: number;
 }) {
-  const hasImage = Boolean(story.imageSrc);
-
   return (
-    <article className="border-t border-paper-300 py-12 sm:py-16 lg:py-20">
-      <div
-        className={`grid gap-8 lg:grid-cols-12 lg:gap-10 ${
-          index % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''
-        }`}
-      >
-        {/* IMAGE */}
-        <div className="lg:col-span-7">
-          {hasImage ? (
-            <ImageBlock
-                src={story.imageSrc}
-                alt={`${story.title} — ${story.location}`}
-                direction={index % 2 === 0 ? 'left' : 'right'}
-                className={`w-full ${
-                index === 0
-                ? 'aspect-[4/3] lg:aspect-[5/4]'
-                : 'aspect-[4/3]'
-                }`}
-/>
-          ) : (
-            <div className="flex min-h-[260px] items-center justify-center bg-ink-900 px-8 text-center text-paper-50">
-              <div>
-                <span className="block text-[9px] uppercase tracking-[0.22em] text-paper-400">
-                  {story.category}
-                </span>
-                <span className="mt-4 block font-serif text-3xl italic sm:text-4xl">
-                  {story.title}
-                </span>
-              </div>
-            </div>
-          )}
-
-          {story.secondaryImageSrc && (
-            <div className="mt-5 ml-auto w-[58%]">
-              <ImageBlock
-                  src={story.secondaryImageSrc}
-                  alt={`${story.title} — broadcast`}
-                  direction={index % 2 === 0 ? 'right' : 'left'}
-                  className="aspect-[4/3] w-full"
-                />
-            </div>
-          )}
-
-          {story.videoSrc && (
-            <div className="mt-5 overflow-hidden bg-black">
-              <video
-                src={story.videoSrc}
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                className="aspect-video w-full object-cover"
-              />
-            </div>
-          )}
-        </div>
-
+    <article className="border-t border-black/10 py-16 md:py-24">
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
         {/* TEXT */}
         <div className="flex flex-col justify-between lg:col-span-5">
           <div>
@@ -203,6 +145,30 @@ function FeaturedStory({
             <WatchLink id={story.youtubeId} />
           </div>
         </div>
+
+        {/* ONE PRIMARY VISUAL ONLY */}
+        <div className="lg:col-span-7">
+          {story.videoSrc ? (
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-black">
+              <video
+                src={story.videoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ) : story.imageSrc ? (
+            <ImageBlock
+              src={story.imageSrc}
+              alt={story.title}
+              className="aspect-[16/9]"
+              direction={index % 2 === 0 ? 'left' : 'right'}
+            />
+          ) : null}
+        </div>
       </div>
     </article>
   );
@@ -210,7 +176,7 @@ function FeaturedStory({
 
 /* -------------------------------------------------------
    ARCHIVE
-   Compact treatment � no artificial giant image areas.
+   Compact treatment — no artificial giant image areas.
 ------------------------------------------------------- */
 
 function ArchiveStory({
@@ -369,7 +335,7 @@ function AboutSection() {
             </h2>
 
             <p className="mt-8 max-w-md text-[14px] leading-7 text-ink-600">
-              Reporting across print, television and digital media � with a
+              Reporting across print, television and digital media — with a
               particular interest in geopolitics, international affairs,
               national security and stories that demand being on the ground.
             </p>
@@ -423,7 +389,7 @@ function AboutSection() {
                     {EDUCATION.degree}
                   </p>
                   <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-ink-400">
-                    {EDUCATION.institution} � {EDUCATION.period}
+                    {EDUCATION.institution} — {EDUCATION.period}
                   </p>
                 </div>
               </div>
@@ -450,7 +416,7 @@ function AboutSection() {
                 <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink-400">
                   {milestone.period}
                   {milestone.current && (
-                    <span className="ml-2 text-journal-red">? Current</span>
+                    <span className="ml-2 text-journal-red">• Current</span>
                   )}
                 </div>
 
@@ -575,7 +541,7 @@ function ContactSection() {
               rel="noreferrer"
               className="hover:text-white"
             >
-              Resume ?
+              Resume ↗
             </a>
           </div>
         </div>
@@ -665,7 +631,7 @@ export default function App() {
         aria-label="Back to top"
         className="fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-ink-300 bg-paper-100 text-xs text-ink-900 shadow-sm transition-transform hover:-translate-y-1"
       >
-        ?
+        ↑
       </a>
     </div>
   );

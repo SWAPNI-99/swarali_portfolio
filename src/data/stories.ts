@@ -3,6 +3,7 @@ import { MEDIA } from './media';
 
 export const STORIES: Story[] = [
   {
+    
     id: 'aravalli-mining',
     title: 'Aravalli illegal mining investigation',
     category: 'Investigation',
@@ -11,46 +12,34 @@ export const STORIES: Story[] = [
     organization: 'Republic Media Network',
     role: 'Lead field investigative reporter',
     summary:
-      'Reporting from remote villages in the Aravalli range — places with little media outreach and, in stretches, no network — Swarali investigated illegal mining, regulatory non-compliance and the effect on local communities. The assignment included mining hotspots, villagers’ accounts, a sting on an illegal mine owner, and a period in which the reporting vehicle was tracked.',
+      'Reporting from remote villages in the Aravalli range — places with little media outreach and, in stretches, no network — investigated illegal mining, regulatory non-compliance and the effect on local communities. The assignment included mining hotspots, villagers’ accounts, a sting on an illegal mine owner.',
     reportingDetails: [
       'Travelled through isolated hamlets with limited or no mobile coverage to record testimonies.',
       'Documented non-compliance with mining restrictions and environmental guidelines.',
-      'Conducted a sting operation on an illegal mine owner.',
-      'Reporting vehicles were tracked during the assignment.',
-    ],
-    keyInterviews: [
-      'Villagers affected by mining activity',
-      'Undercover interaction with illegal mine operators',
     ],
     youtubeId: 'Y7D1LkQeZ-0',
     featured: true,
+    videoSrc: MEDIA.aravalliVideo,
     tier: 1,
   },
   {
     id: 'goa-fire-tragedy',
     title: 'Goa fire tragedy',
-    category: 'Disaster',
+    category: 'Tragedy',
     date: '2025–2026',
     location: 'Arpora, Goa',
     organization: 'Republic Media Network',
     role: 'On-ground special correspondent',
     summary:
-      'Dispatched after the nightclub fire in which 25 people died, Swarali reported from the ground on licensing, safety failures and the investigation that followed. The coverage included an exclusive interview with the Arpora village sarpanch, an extended 30–45 minute recording with BJP MLA Michael Lobo, and three on-camera interviews with Goa Chief Minister Pramod Sawant.',
+      'After the nightclub fire in which 25 people died, reported from the ground - on licensing, safety failures and the investigation that followed. The coverage included real time story updates and digging all elements like questioning the Arpora village sarpanch on license approvals, spy cam recording with ruling BJP MLA Michael Lobo and followed TTs with Goa CM Pramod Sawant.',
     reportingDetails: [
-      'Exclusive ground interview with the Arpora village sarpanch on licensing and building approvals.',
-      'Extended 30–45 minute on-camera recording with MLA Michael Lobo.',
-      'Interviewed Chief Minister Pramod Sawant three times.',
-      'Live updates from the disaster site for Republic TV.',
+      'Reported on human angle element of story talking to deceased relatives.',
+      'Tailed several layers of fractured fire security system, involvement of government officers and illegal practices by owners of the club.',
+      'Major takeaway - observed the same systemic failure in several night clubs, bars and restaurants across Goa.',
     ],
-    keyInterviews: [
-      'Dr. Pramod Sawant, Chief Minister of Goa — three interviews',
-      'Michael Lobo, BJP MLA — 30–45 minute recording',
-      'Arpora village sarpanch — exclusive on-ground interaction',
-    ],
-    imageSrc: MEDIA.goaField,
-    secondaryImageSrc: MEDIA.goaBroadcast,
     youtubeId: 'QY9Zfb9aags',
     featured: true,
+    videoSrc: MEDIA.goaVideo,
     tier: 1,
   },
   {
@@ -62,15 +51,15 @@ export const STORIES: Story[] = [
     organization: 'Republic Media Network',
     role: 'Gujarat bureau & security reporter',
     summary:
-      'From the Gujarat bureau, Swarali reported the arrest of Dr. Ahmed Mohiuddin Syed in the Ricin plot, Gujarat ATS action against a Jaish-linked module with a Saharanpur connection, and related illegal immigration reporting. Prime-time bulletins tracked forensic claims, terror financing leads and inter-state sweeps as they were put on air.',
+      'From the Gujarat bureau, reported the arrest of Dr. Ahmed Mohiuddin Syed in the Ricin plot, Gujarat ATS action against a Jaish-linked module with a Saharanpur connection, and related illegal immigration reporting. Prime-time bulletins tracked forensic claims, terror financing leads and inter-state sweeps as they were put on air.',
     reportingDetails: [
-      'Reported the arrest of accused Dr. Ahmed Mohiuddin Syed and CCTV timeline reconstructions.',
-      'Covered Gujarat ATS action against a Jaish-linked module, including the Saharanpur arrest of Mohd Suhel.',
-      'Reported on illegal immigration corridors operating across Gujarat.',
+      'Tracked various evidences of this plot involving seized incriminating text, raw material to make potent chemical and inputs of location recce.',
+      'Interviewed Gujarat ATS SP k. Siddharth on the arrest and investigation.',
+      
     ],
-    imageSrc: MEDIA.ricin,
-    secondaryImageSrc: MEDIA.saharanpur,
     featured: true,
+    videoSrc: MEDIA.ricinVideo,
+    youtubeId: 'pPcGNUdJCug',
     tier: 1,
   },
   {
@@ -82,39 +71,32 @@ export const STORIES: Story[] = [
     organization: 'Republic Media Network',
     role: 'Political correspondent',
     summary:
-      'On counting day, Swarali interviewed all three Congress chief ministerial contenders, including Leader of Opposition and UDF Chairman V. D. Satheesan. The reporting placed Kerala’s verdict alongside a wider southern shift — Congress in Kerala, Vijay in Tamil Nadu, the BJP’s Bengal result, and the Left losing its last bastion.',
+      ' Reported from congress bhavan in Trivandrum on counting day. Interviewed all three Congress chief ministerial contenders - KC Venugopal, Ramesh Chennithala and current CM VD Satheesan. The reporting placed Kerala’s verdict alongside a wider southern shift — Congress in Kerala, Vijay in Tamil Nadu, the BJP’s Bengal result, and the Left losing its last bastion.',
     reportingDetails: [
-      'Interviewed V. D. Satheesan on the mandate and government-formation talks.',
-      'Interviewed all three prospective Congress CM candidates on D-day.',
-      'Filed bilingual reports from the counting-day floor.',
+      'Was an experience to deliver even after language barrier.',
+      'Major power shift as anti incumbency ousted Pinarayi Vijayan and left.',
+      'BJP claimed kerala to be its next Bengal with same increased strategic presence.',
     ],
-    keyInterviews: [
-      'V. D. Satheesan, Leader of Opposition and UDF Chairman',
-      'All three prospective Congress CM candidates on D-day',
-    ],
-    imageSrc: MEDIA.keralaStill,
-    videoSrc: MEDIA.keralaVideo,
     featured: true,
+    videoSrc: MEDIA.keralaVideo,
     tier: 1,
   },
   {
     id: 'defence-pokhran-vayu-shakti',
-    title: 'Ex Vayu Shakti, Pokhran',
+    title: 'Exercise Vayu Shakti, Pokhran',
     category: 'Defence',
     date: '2024–2025',
     location: 'Pokhran Fire Range, Jaisalmer, Rajasthan',
     organization: 'Republic Media Network',
     role: 'Defence field reporter',
     summary:
-      'From the Pokhran firing range in Jaisalmer, Swarali reported live on the Indian Air Force exercise Ex Vayu Shakti. Defence assignments have also included National Defence Academy passing-out parades and the India–Africa joint military drill.',
+      'From the field firing range in Pokhran.Covered exercise Vayu Shakti conducted by the Indian Air Force. Defence assignments has a different thrill.This one was even special staging actual replica of the Opearation Sindoor.IAFs efficient fleet of Rafale, Sukhoi Su-30MKI, Mirage 2000, MiG-29, and Jaguar with its onpoint targeting trembled the entire range. The indigenous Akash surface-to-air missile system showcased the precision of India’s defence capabilities.',
     reportingDetails: [
-      'Live reporting from the forward firing ranges during Ex Vayu Shakti.',
-      'Coverage of NDA passing-out parades.',
-      'Reporting on the India–Africa joint military training exercise.',
+      'With precision parameters the exercise was a message to world that India is prepared to protect its teritory.',
+      'Coordinated multi domain operations can be executed by Indian Air Force.',
     ],
-    imageSrc: MEDIA.defenceField,
-    secondaryImageSrc: MEDIA.defenceBroadcast,
     featured: true,
+    imageSrc: MEDIA.defenceBroadcast,
     tier: 2,
   },
   {
@@ -126,7 +108,7 @@ export const STORIES: Story[] = [
     organization: 'Times Network (Mirror Now / Times Now)',
     role: 'Bureau reporter',
     summary:
-      'During Maharashtra’s regime change, Swarali tracked floor tests and coalition talks and conducted a tic-tac with Chief Minister Eknath Shinde. Filing moved across Mirror Now, Times Now and Times Now Marathi in English, Hindi and Marathi.',
+      'During Maharashtra’s regime change, tracked floor tests and coalition talks and conducted a tic-tac with Chief Minister Eknath Shinde. Filing moved across Mirror Now, Times Now and Times Now Marathi in English, Hindi and Marathi.',
     reportingDetails: [
       'Live tic-tac and press interviews with Chief Minister Eknath Shinde.',
       'Covered negotiations involving Ajit Pawar, Supriya Sule and Aditya Thackeray.',
@@ -148,7 +130,7 @@ export const STORIES: Story[] = [
     organization: 'Times Network (Mirror Now)',
     role: 'Pune district bureau reporter',
     summary:
-      'A civic and environment report on Pune’s River Front Development along the Mula-Mutha, looking at flood-risk concerns, tree felling and public objections.',
+      'A civic and environment report on Pune’s River Front Development along the Mula-Mutha, looking at flood-risk concerns, tree felling and public objections. This has been a story of resilient civil society and environmental activists voicing up against the RFD project to save the city from the aftermath .',
     reportingDetails: [
       'Surveyed riverbank stretches marked for clearing.',
       'Spoke with municipal planners and environmental activists on flood-line changes.',
@@ -157,17 +139,22 @@ export const STORIES: Story[] = [
     tier: 2,
   },
   {
-    id: 'mpsc-student-protest',
-    title: 'MPSC youth agitation',
-    category: 'Civic & environment',
-    date: '2023',
-    location: 'Pune, Maharashtra',
+    id: 'chandani-chowk-multi-bridge',
+    title: 'Chandani Chowk Multi-Bridge',
+    category: 'Civic Infrastructure',
+    date: '2022',
+    location: 'Chandani Chowk, Pune',
     organization: 'Times Network',
-    role: 'Bureau reporter',
+    role: 'Reporter',
     summary:
-      'On-ground coverage of student demonstrations in Pune over Maharashtra Public Service Commission examinations.',
-    reportingDetails: [],
-    youtubeId: 'Y3pJjPk8x3U',
+      'Chandani Chowk became a major traffic choke point on the Mumbai–Bangalore Highway. An ambitious multi-level flyover was developed without signals to enable smoother traffic movement.',
+    reportingDetails: [
+      'Reported on Chandani Chowk becoming a major traffic choke point on the Mumbai–Bangalore Highway.',
+      'Covered the development of the ambitious multi-level flyover.',
+      'Reported on the signal-free design aimed at enabling smoother traffic movement.',
+    ],
+    youtubeId: '',
+    featured: false,
     tier: 2,
   },
   {
@@ -179,10 +166,11 @@ export const STORIES: Story[] = [
     organization: 'Times Network',
     role: 'Environment reporter',
     summary:
-      'Reporting on proposed road works through Vetal Tekdi, including citizen protests and concerns over the hill’s ecology.',
+      'Reporting on proposed ring roadand developmet project works through Vetal Tekdi, including citizen protests and concerns over the hill’s ecology which are known as lungs of the Pune City.',
     reportingDetails: [
       'Documented citizen protests against proposed hill roads and tunnels.',
     ],
+    youtubeId: 'l_oYgysRv_A',
     tier: 2,
   },
   {
@@ -199,6 +187,7 @@ export const STORIES: Story[] = [
       'Multilingual ground reports from the campaign.',
       'Interviewed Gujarat Home Minister Harsh Sanghvi.',
     ],
+    youtubeId: 'UIoehoQcNog',
     tier: 2,
   },
   {
@@ -213,37 +202,6 @@ export const STORIES: Story[] = [
       'Live reporting from Ahmedabad airport on flight cancellations and stranded passengers, putting questions of regulator accountability to the DGCA on air.',
     reportingDetails: [
       'Spoke on air with stranded families, senior citizens and students.',
-    ],
-    imageSrc: MEDIA.airport,
-    tier: 3,
-  },
-  {
-    id: 'chhota-udepur-sand-mining',
-    title: 'Illegal sand mining, Chhota Udepur',
-    category: 'Investigation',
-    date: '2025–2026',
-    location: 'Chhota Udepur, Gujarat',
-    organization: 'Republic Media Network',
-    role: 'Investigative field reporter',
-    summary:
-      'Field reporting on illegal riverbed sand extraction in tribal belts of eastern Gujarat.',
-    reportingDetails: [
-      'Documented machinery along river corridors without environmental clearances.',
-    ],
-    tier: 3,
-  },
-  {
-    id: 'gujarat-floods',
-    title: 'Gujarat monsoon floods',
-    category: 'Disaster',
-    date: '2025',
-    location: 'Saurashtra & central Gujarat',
-    organization: 'Republic Media Network',
-    role: 'Disaster field reporter',
-    summary:
-      'On-ground reportage from flood-affected towns and villages, including rescue operations and relief bottlenecks.',
-    reportingDetails: [
-      'Accompanied emergency personnel through waterlogged habitations.',
     ],
     tier: 3,
   },
@@ -260,6 +218,7 @@ export const STORIES: Story[] = [
     reportingDetails: [
       'Tracked commercial cargo delays affecting export supply lines.',
     ],
+    youtubeId: 'O9o7vh23DBE',
     tier: 3,
   },
 ];
