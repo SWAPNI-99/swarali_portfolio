@@ -156,6 +156,7 @@ function FeaturedStory({
                 muted
                 loop
                 playsInline
+                controls
                 preload="metadata"
                 className="h-full w-full object-cover"
               />
