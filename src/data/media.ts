@@ -1,0 +1,15 @@
+export const MEDIA = {
+  hero: '/media/hero/swarali-field-reporter.jpg',
+  goaField: '/media/stories/goa-field.jpg',
+  goaBroadcast: '/media/stories/goa-broadcast.jpg',
+  defenceField: '/media/stories/defence-jaisalmer-field.jpg',
+  defenceBroadcast: '/media/stories/defence-vayu-shakti-broadcast.jpg',
+  airport: '/media/stories/ahmedabad-airport-dgca.jpg',
+  keralaStill: '/media/stories/kerala-satheesan-still.jpg',
+  keralaVideo: '/media/videos/kerala-elections-satheesan.mp4',
+  terrorModule: '/media/stories/terror-module-investigation-broadcast.jpg',
+  ricin: '/media/stories/ricin-terror-cctv-broadcast.jpg',
+  saharanpur: '/media/stories/saharanpur-arrest-broadcast.jpg',
+  terrorNetwork: '/media/stories/gujarat-police-terror-broadcast.jpg',
+  resume: '/media/resume/swarali-joshirao-resume.pdf',
+} as const;
